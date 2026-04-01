@@ -2224,6 +2224,11 @@ function updateClearFilterButton() {
 }
 
 function loadFilterHandlers() {
+
+    function updateSearchClearButton() {
+        const hasText = $('#search-content').val().trim().length > 0;
+        $('#search-clear').toggle(hasText);
+   }
     $('#filter_unread_btn').on('mousedown', function (e) {
         $(this).toggleClass('filter-inactive filter-active');
     });
@@ -2240,6 +2245,7 @@ function loadFilterHandlers() {
         }
 
         updateClearFilterButton();
+        updateSearchClearButton();
         updateThreads(true, saveFilterState);
         return true;
     });
@@ -2257,8 +2263,8 @@ function loadFilterHandlers() {
         }
     });
 
-    $('#search-content').on('input', (e) => {
-        $('#search-clear').toggle($('#search-content').val() !== '');
+    $('#search-content').on('input', () => {
+        updateSearchClearButton();
     });
 
     $('#search-clear').on('mousedown', (e) => {
