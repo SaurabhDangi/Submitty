@@ -2245,7 +2245,6 @@ function loadFilterHandlers() {
         }
 
         updateClearFilterButton();
-        updateSearchClearButton();
         updateThreads(true, saveFilterState);
         return true;
     });
