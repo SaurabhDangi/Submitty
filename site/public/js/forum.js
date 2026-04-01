@@ -2224,7 +2224,6 @@ function updateClearFilterButton() {
 }
 
 function loadFilterHandlers() {
-
     function updateSearchClearButton() {
         const hasText = $('#search-content').val().trim().length > 0;
         $('#search-clear').toggle(hasText);
