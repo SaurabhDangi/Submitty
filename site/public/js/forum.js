@@ -2228,7 +2228,8 @@ function loadFilterHandlers() {
     function updateSearchClearButton() {
         const hasText = $('#search-content').val().trim().length > 0;
         $('#search-clear').toggle(hasText);
-   }
+    }
+    
     $('#filter_unread_btn').on('mousedown', function (e) {
         $(this).toggleClass('filter-inactive filter-active');
     });
